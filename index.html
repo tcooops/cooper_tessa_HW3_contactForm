@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBC - HW3</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wey6omn.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <h1 class="hidden">Mail Reference for API Processing</h1>
+        <h2>Building a functioning form for MMED3040</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim assumenda consectetur illum cupiditate itaque deserunt blanditiis ipsum!</p>
+
+        <hr class="separator">
+
+        <h2>Hola! Get in touch now!</h2>
+
+        <form action="/includes/mail/send.php" method="POST" id="mail-form" class="form">
+            <!-- get: retrieves data (adds to the url for a visual example) vs post: nothing added to url... they have to open the envelope to see what's inside. This is for CONFIDENTIALITY!! ALWAYS USE POST FOR FORMS! AND PRIVACY -->
+            <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" placeholder="first name" required>
+
+            <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" placeholder="last name" required>
+
+            <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholer="email" required>
+
+            <label for="reason">Reason for contacting:</label>
+                <select id="reason" name="reason" required>
+                    <option value="web">Website</option>
+                    <option value="graphic">Graphic Design</option>
+                    <option value="audio">Audio</option>
+                    <option value="video">Video</option>
+                    <option value="motion">Motion Design</option>
+                    <option value="other">Other</option>
+                </select>
+
+            <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+
+            <div class="submit-wrapper">
+                <span class="submit">Submit</span>
+            </div>
+
+        </form>
+    </main>
+    
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
+
+<!-- Notes from Trevor's code:
+
+1. index.html contains the HTML from
+2. When the "submit" button is clicked, JS will trigger the AJAX request
+3. The AJAX request is being sent to the form's "action" attribute (fetch's target is form's attriibute value of action)
+4. The AJAX request is expecting the returning data to be JSON (from result.json) -->
+
+
+<!--  "for" attribute in label has to be exactly the same as the id of the label -->
